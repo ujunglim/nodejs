@@ -21,3 +21,31 @@ partialsDir: 반복적인 코드를 쉐어링할수 있게 경로설정
 
 html
 css같은건 public에, html 템플릿은 views안에
+
+# 6.
+
+nodemon server.js --ext .js,.hbs
+js, hbs로 끝나는걸 감시
+
+서버에 페이지 요청을하면server.get(), 서버가 파일을 불러옴 res.render
+server에서 보낸 object를 통해서 html를 변형할 수 있다.
+
+handlebar
+
+### partial
+
+{{> head}}
+
+### if
+
+```js
+{{#if home}}active{{/if}}
+```
+
+### each
+
+```js
+{{#each list}}
+    <li>{{this}}</li>
+{{/each}}
+```
