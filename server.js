@@ -25,7 +25,9 @@ server.use((req, res, next) => {
 // http는 url 하나하나마다 써야될게 많은데 express는 간단
 server.get("/", (req, res) => {
   //   res.status(200).sendFile(__dirname + "/index.html");
-  res.status(200).render("index"); // index.hbs
+  res.status(200).render("index", {
+    name: "Yujung",
+  }); // index.hbs
 });
 
 // http server
