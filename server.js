@@ -3,6 +3,22 @@ const fs = require("fs");
 const express = require("express");
 const hbs = require("express-handlebars");
 const server = express();
+const readline = require("readline");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.question("what's your name?", (answer) => {
+  console.log(`Hello ${answer}`);
+  rl.close();
+});
+
+fs.writeFileSync("./hello.txt", "hello yu");
+fs.appendFileSync("./hello.txt", "\nWelcome!");
+const data = fs.readFileSync("./hello.txt", { encoding: "utf-8" });
+const list = fs.readdirSync(".");
 
 // template
 server.engine(
